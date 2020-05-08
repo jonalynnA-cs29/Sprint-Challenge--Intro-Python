@@ -111,4 +111,4 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 # NOTE: Comment Out for test to PASS #
 cities_within = cityreader_stretch(lat1, lon1, lat2, lon2, cities)
 for c in cities_within:
-    print(f"\033[34m{c.name}: Lat: {c.lat}, Lon: {c.lon}\033[39m")
+    print(f"\033[34m{c.name}, {c.lat}, {c.lon}\033[39m")
