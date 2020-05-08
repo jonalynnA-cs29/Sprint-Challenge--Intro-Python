@@ -12,7 +12,6 @@ class City:
     def __str__(self):
         return str(f"{self.name}, {self.lat}, {self.lon}")
 
-
     # We have a collection of US cities with population over 750,000 stored in the
     # file "cities.csv". (CSV stands for "comma-separated values".)
     #
@@ -93,13 +92,16 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # within will hold the cities that fall within the specified region
     within = []
 
+    def __str__(self):
+        return c('City:', c.name, 'Lat:', str(c.lat), 'Lon:', str(c.lon))
+
     # TODO Ensure that the lat and lon valuse are all floats
     # Go through each city and check to see if it falls within
     # the specified coordinates.
 
     for c in cities:
         # if lat1 <= c.lat <= lat2 or lat2 <= c.lat <= lat1 and lon1 <= c.lon <= lon2 or lon2 <= c.lon <= lon1:
-        #within.append(City(c.name, c.lat, c.lon))
+        #     within.append(City(c.name, c.lat, c.lon))
 
         if (min(lat1, lat2) < c.lat < max(lat1, lat2)) and ((min(lon1, lon2) < c.lon < max(lon1, lon2))):
             within.append(City(c.name, c.lat, c.lon))
@@ -109,4 +111,4 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 # NOTE: Comment Out for test to PASS #
 cities_within = cityreader_stretch(lat1, lon1, lat2, lon2, cities)
 for c in cities_within:
-    print(f"{c.name}: {c.lat}, {c.lon}")
+    print(f"\033[34m'{c.name}: Lat: {c.lat}, Lon: {c.lon}\033[39m'")
