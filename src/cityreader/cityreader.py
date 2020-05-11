@@ -5,9 +5,23 @@ import csv
 
 class City:
     def __init__(self, name, lat, lon):
-        self.name = name
-        self.lat = lat
-        self.lon = lon
+    self.name = name
+    self.lat = lat
+    self.lon = lon
+
+
+# class City:
+#     def __init__(self, name, lat=float, lon=float): <= <  # NOTE: THIS WAY? #1
+#     self.name = name
+#     self.lat = lat
+#     self.lon = lon
+
+
+# class City:
+#     def __init__(self, name, lat, lon):
+#         self.name = name
+#         self.lat = float(lat) <= <  # NOTE: OR THIS WAY? #2
+#         self.lon = float(lon)
 
     def __str__(self):
         return str(f"{self.name}, {self.lat}, {self.lon}")
